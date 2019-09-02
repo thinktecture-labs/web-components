@@ -12,6 +12,7 @@ import { ReactChartJsComponent } from './components/react-chart-js/react-chart-j
 import { NgChartJsComponent } from './components/ng-chart-js/ng-chart-js.component';
 import { NgCanvasJsComponent } from './components/ng-canvas-js/ng-canvas-js.component';
 import { ReactCanvasJsComponent } from './components/react-canvas-js/react-canvas-js.component';
+import { VueChartJsComponent } from './components/vue-chart-js/vue-chart-js.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactCanvasJsComponent } from './components/react-canvas-js/react-canva
     NgChartJsComponent,
     NgCanvasJsComponent,
     ReactCanvasJsComponent,
+    VueChartJsComponent,
   ],
   imports: [
     BrowserModule,

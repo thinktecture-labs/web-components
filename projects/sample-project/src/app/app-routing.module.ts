@@ -4,6 +4,7 @@ import { NgCanvasJsComponent } from './components/ng-canvas-js/ng-canvas-js.comp
 import { NgChartJsComponent } from './components/ng-chart-js/ng-chart-js.component';
 import { ReactCanvasJsComponent } from './components/react-canvas-js/react-canvas-js.component';
 import { ReactChartJsComponent } from './components/react-chart-js/react-chart-js.component';
+import { VueChartJsComponent } from './components/vue-chart-js/vue-chart-js.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'ng-canvas-js',
     component: NgCanvasJsComponent
+  },
+  {
+    path: 'vue-chart-js',
+    component: VueChartJsComponent,
   }
 ];
 

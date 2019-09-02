@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <ChartJs></ChartJs>
+    <ChartContainer label="Ein Label!"></ChartContainer>
   </div>
 </template>
 
 <script lang="ts">
+import ChartContainer from '@/components/ChartContainer.vue';
 import ChartJs from '@/components/ChartJs.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
-    ChartJs,
+    ChartContainer,
   },
 })
 export default class App extends Vue {}

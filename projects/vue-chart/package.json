@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-wc": "vue-cli-service build --target wc --name vue-chart-js ./src/main-wc.ts"
+    "build-wc": "vue-cli-service build --inline-vue --target wc --name vue-chart-js ./src/components/ChartContainer.vue"
   },
   "dependencies": {
     "@vue/web-component-wrapper": "^1.2.0",

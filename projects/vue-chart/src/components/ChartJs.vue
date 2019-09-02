@@ -1,10 +1,13 @@
 <script lang="ts">
     import { Line } from 'vue-chartjs-typescript';
-    import { Component, Mixins, Prop } from 'vue-property-decorator';
+    import { Component, Mixins, Prop } from "vue-property-decorator";
 
     @Component
     export default class ChartJs extends Mixins(Line) {
+        @Prop() label!: string;
+
         private mounted() {
+            console.log('vue - mounted was called');
             this.renderChart({
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
@@ -30,7 +33,7 @@
                         data: [65, 59, 80, 81, 56, 55, 40],
                     },
                 ],
-            });
+            }, { responsive: false });
         }
     }
 </script>

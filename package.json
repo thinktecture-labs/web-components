@@ -8,11 +8,16 @@
     "ng": "ng",
     "build-external-chart": "cd projects/external-chart && ng build external-chart --prod --output-hashing=none",
     "package-external-chart": "cd projects/external-chart && cat dist/external-chart/{runtime-es2015,scripts,main-es2015}.js > ../../projects/sample-project/src/assets/angular-external-chart.js",
+    "external-chart-wc": "npm run build-external-chart && npm run package-external-chart",
     "build-prod-react-component": "cd projects/react-chart && cross-env GENERATE_SOURCEMAP=false npm run build",
     "package-react-component": "shx cat projects/react-chart/build/static/js/{runtime~main.*,*.chunk}.js > projects/sample-project/src/assets/react-components.js",
+    "react-wc": "npm run build-prod-react-component && npm run package-react-component",
+    "build-vue-component": "cd projects/vue-chart && npm run build-wc",
+    "package-vue-component": "shx cp projects/vue-chart/dist/vue-chart-js.js projects/sample-project/src/assets/vue-chart-js.js",
+    "vue-wc": "npm run build-vue-component && npm run package-vue-component",
     "start": "cd projects/sample-project && ng serve",
     "start-output": "npx live-server output",
-    "build-package-web-components": "npm run build-external-chart && npm run package-external-chart && npm run build-prod-react-component && npm run package-react-component",
+    "build-package-web-components": "concurrently \"npm:external-chart-wc\" \"npm:react-wc\" \"npm:vue-wc\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,6 +26,7 @@
   },
   "devDependencies": {
     "@angular/cli": "^8.0.0-rc.4",
+    "concurrently": "^4.1.2",
     "cross-env": "^5.2.0",
     "shx": "^0.3.2"
   }
