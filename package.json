@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=10.9.0 <11.0.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "build-external-chart": "cd projects/external-chart && ng build external-chart --prod --output-hashing=none",
+    "package-external-chart": "cd projects/external-chart && cat dist/external-chart/{runtime-es2015,scripts,main-es2015}.js > ../../projects/sample-project/src/assets/angular-external-chart.js",
+    "build-prod-react-component": "cd projects/react-chart && cross-env GENERATE_SOURCEMAP=false npm run build",
+    "package-react-component": "shx cat projects/react-chart/build/static/js/{runtime~main.*,*.chunk}.js > projects/sample-project/src/assets/react-components.js",
+    "start": "cd projects/sample-project && ng serve",
+    "start-output": "npx live-server output",
+    "build-package-web-components": "npm run build-external-chart && npm run package-external-chart && npm run build-prod-react-component && npm run package-react-component",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "devDependencies": {
+    "@angular/cli": "^8.0.0-rc.4",
+    "cross-env": "^5.2.0",
+    "shx": "^0.3.2"
+  }
+}

@@ -1,0 +1,12 @@
+<h3>{{title}}</h3>
+<div [style.width]="width + '%'">
+  <canvas
+    baseChart
+    [chartType]="'line'"
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="true"
+    (chartClick)="onChartClick($event)">
+  </canvas>
+</div>

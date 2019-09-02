@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ExternalChart</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="angular-external-chart.js"></script>
+    <script src="react-component.js"></script>
+</head>
+<body>
+    <ex-chart title="Test 12345" width="80"></ex-chart>
+    <script>
+        const component = document.querySelector('ex-chart');
+        component.addEventListener('chartClick', (event) => {
+            alert(event.detail);
+        })
+    </script>
+</body>
+</html>
