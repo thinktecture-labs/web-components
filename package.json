@@ -16,7 +16,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "cd projects/external-chart && npm i && cd ../react-chart && npm i && cd ../sample-project && npm i"
   },
   "devDependencies": {
     "@angular/cli": "^8.0.0-rc.4",
